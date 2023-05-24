@@ -2,13 +2,16 @@ input.onButtonPressed(Button.A, function () {
     dice = randint(1, 6)
 })
 input.onButtonPressed(Button.B, function () {
-	
+    basic.clearScreen()
+    basic.pause(200)
+    MyImageShow(MyImage)
 })
-function MyImageShow () {
-    for (let MyColum = 0; MyColum <= 4; MyColum++) {
-        for (let MyRow = 0; MyRow <= 4; MyRow++) {
-            CurrentBrigthness = MyImage[MyColum * 4 + MyRow]
+function MyImageShow (pMyImage: number[]) {
+    for (let MyRow = 0; MyRow <= 4; MyRow++) {
+        for (let MyColum = 0; MyColum <= 4; MyColum++) {
+            CurrentBrigthness = pMyImage[MyRow * 5 + MyColum]
             led.plotBrightness(MyColum, MyRow, CurrentBrigthness)
+            basic.pause(50)
         }
     }
 }
