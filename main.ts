@@ -1,10 +1,3 @@
-/**
- * MyImageList = [1][MyImage2]
- */
-// let MyImageList = [0][MyImage]
-function MyImageShowFromImageList (MyImageIndex: number, pMyImageList: number [][]) {
-    MyImageShow(pMyImageList[MyImageIndex])
-}
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     basic.pause(200)
@@ -16,12 +9,7 @@ function doSomething (list: any[]) {
 input.onButtonPressed(Button.AB, function () {
     dice = randint(1, 6)
 })
-// MyImageShowFromImageList(1, MyImageList)
-input.onButtonPressed(Button.B, function () {
-    basic.clearScreen()
-    basic.pause(200)
-    MyImageShow(MyImageList[0])
-})
+
 function MyImageShow (pMyImage: number[]) {
     for (let MyRow2 = 0; MyRow2 <= 4; MyRow2++) {
         for (let MyColum2 = 0; MyColum2 <= 4; MyColum2++) {
@@ -35,8 +23,11 @@ let CurrentBrigthness = 0
 let dice = 0
 let MyImage2: number[] = []
 let MyImage: number[] = []
-let MyImageList = [MyImage, MyImage2]
-// let MyImageList:  [] []
+let LastImageIndex = 0
+let MyImageList: number[][]
+MyImageList[0] = MyImage
+
+MyImageList[0] =MyImage2
 MyImage = [
 0,
 10,
